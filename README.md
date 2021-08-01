@@ -1,6 +1,10 @@
-# Bug report for `#[path = concat!(env!("OUT_DIR"), "/generated.rs")]`
+# Bug report for [the issue in rust-lang repo](https://github.com/rust-lang/rust/issues/87681)
 
-This feature doesn't work.
+The following syntax doesn't work:
+```rust
+#[path = concat!(env!("OUT_DIR"), "/generated.rs")]
+mod generated;
+```
 
 If you run `cargo check`, you'll see the following output:
 
